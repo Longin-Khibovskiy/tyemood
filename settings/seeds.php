@@ -123,6 +123,13 @@ $pagesData = [
     ['Корзина', '', '/'],
 ];
 
+$mainCategories = [
+    ['Футболки, лонгсливы', 'Каждая — как дневник настроения. Тай-дай, роспись, детали — ты точно найдёшь свою.', '/images/main_category/tshirt.png'],
+    ['Толстовки', 'Объёмные, уютные, расписанные вручную — такие вещи не греют, они говорят.', '/images/main_category/sweatshirt.png'],
+    ['Аксессуары', 'Шопперы, носки, кепки и не только. Раскрась своё настроение до кончиков шнурков.', '/images/main_category/accessories.png'],
+    ['Кастом под заказ', 'Мы создадим вещь по твоей идее. Просто опиши — и получи уникальный результат.', '/images/main_category/custom.png'],
+];
+
 foreach ($pagesData as $data) {
     $name = $conn->real_escape_string($data[0]);
     $description = $data[1] ? "'" . $conn->real_escape_string($data[1]) . "'" : "NULL";
@@ -133,6 +140,19 @@ foreach ($pagesData as $data) {
 
     if (!$conn->query($sql)) {
         echo "Ошибка вставки в pages: " . $conn->error . "\n";
+    }
+}
+
+foreach ($mainCategories as $data) {
+    $name = $conn->real_escape_string($data[0]);
+    $description = $data[1] ? "'" . $conn->real_escape_string($data[1]) . "'" : "NULL";
+    $image = $data[2] ? "'" . $conn->real_escape_string($data[2]) . "'" : "NULL";
+
+    $sql = "INSERT INTO main_categories (name, description, image) 
+            VALUES ('$name', $description, $image)";
+
+    if (!$conn->query($sql)) {
+        echo "Ошибка вставки в main_categories: " . $conn->error . "\n";
     }
 }
 ?>
