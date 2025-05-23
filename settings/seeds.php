@@ -112,4 +112,27 @@ $sql = "CREATE TABLE IF NOT EXISTS basket_products (
 )";
 if ($conn->query($sql) === TRUE) echo "Таблица BasketProducts создана успешно.\n"; else die("Ошибка создания таблицы BasketProducts: " . $conn->error);
 
+
+$pagesData = [
+    ['Главная', '', '/'],
+    ['Каталог', '', '/'],
+    ['Портфолио', '', '/'],
+    ['FAQ', '', '/'],
+    ['Оформление заказа', '', '/'],
+    ['Избранное', '', '/'],
+    ['Корзина', '', '/'],
+];
+
+foreach ($pagesData as $data) {
+    $name = $conn->real_escape_string($data[0]);
+    $description = $data[1] ? "'" . $conn->real_escape_string($data[1]) . "'" : "NULL";
+    $pages_link = $data[2] ? "'" . $conn->real_escape_string($data[2]) . "'" : "NULL";
+
+    $sql = "INSERT INTO pages (name, description, link) 
+            VALUES ('$name', $description, $pages_link)";
+
+    if (!$conn->query($sql)) {
+        echo "Ошибка вставки в pages: " . $conn->error . "\n";
+    }
+}
 ?>
