@@ -49,6 +49,7 @@ if ($conn->query($sql) === TRUE) echo "Таблица MainCategories созда�
 $sql = "CREATE TABLE IF NOT EXISTS additional_categories (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
+    second_name VARCHAR(255),
     description VARCHAR(255),
     image VARCHAR(255)
 )";
@@ -130,6 +131,11 @@ $mainCategories = [
     ['Кастом под заказ', 'Мы создадим вещь по твоей идее. Просто опиши — и получи уникальный результат.', '/images/main_category/custom.png'],
 ];
 
+$additionalCategories = [
+    ['Bestsellers', 'Популярное', '', ''],
+    ['Вам может понравится', '', '', '']
+];
+
 foreach ($pagesData as $data) {
     $name = $conn->real_escape_string($data[0]);
     $description = $data[1] ? "'" . $conn->real_escape_string($data[1]) . "'" : "NULL";
@@ -150,6 +156,20 @@ foreach ($mainCategories as $data) {
 
     $sql = "INSERT INTO main_categories (name, description, image) 
             VALUES ('$name', $description, $image)";
+
+    if (!$conn->query($sql)) {
+        echo "Ошибка вставки в main_categories: " . $conn->error . "\n";
+    }
+}
+
+foreach ($additionalCategories as $data) {
+    $name = $conn->real_escape_string($data[0]);
+    $second_name = $data[1] ? "'" . $conn->real_escape_string($data[1]) . "'" : "NULL";
+    $description = $data[2] ? "'" . $conn->real_escape_string($data[1]) . "'" : "NULL";
+    $image = $data[3] ? "'" . $conn->real_escape_string($data[2]) . "'" : "NULL";
+
+    $sql = "INSERT INTO additional_categories (name, second_name, description, image) 
+            VALUES ('$name',$second_name, $description, $image)";
 
     if (!$conn->query($sql)) {
         echo "Ошибка вставки в main_categories: " . $conn->error . "\n";
