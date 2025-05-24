@@ -128,8 +128,8 @@ $mainCategories = [
     ['Футболки, лонгсливы', 'Каждая — как дневник настроения. Тай-дай, роспись, детали — ты точно найдёшь свою.', '/images/main_category/tshirt.png'],
     ['Толстовки', 'Объёмные, уютные, расписанные вручную — такие вещи не греют, они говорят.', '/images/main_category/sweatshirt.png'],
     ['Аксессуары', 'Шопперы, носки, кепки и не только. Раскрась своё настроение до кончиков шнурков.', '/images/main_category/accessories.png'],
-    ['Штаны', '', '/images/main_category/trousers.png'],
     ['Кастом под заказ', 'Мы создадим вещь по твоей идее. Просто опиши — и получи уникальный результат.', '/images/main_category/custom.png'],
+    ['Штаны', '', '/images/main_category/trousers.png'],
     ['Наборы', '', '']
 ];
 
@@ -140,7 +140,7 @@ $additionalCategories = [
 
 $products = [
     // Популярное
-    ['Штаны «лавандовый всплеск»', '', '/images/products/trousers/lavender_splash.png', 2500, 4, 1],
+    ['Штаны «лавандовый всплеск»', '', '/images/products/trousers/lavender_splash.png', 2500, 5, 1],
     ['Футболка «молоко с клубникой»', '', '/images/products/tshirts/milk_with_strawberry.png', 1800, 1, 1],
     ['Носки «цветные лучи»', '', '/images/products/accessories/colored_rays.png', 1000, 3, 1],
     ['Сумка «Амур и Хаос»', '', '/images/products/accessories/cupid_and_chaos.png', 3500, 3, 1],
@@ -148,7 +148,7 @@ $products = [
     // Каталог
     ['Толстовка «лавандовый лёд»', '', '/images/products/sweetshirts/lavender_ice.png', 2800, 2, NULL],
     ['Футболка «тропическое солнце»', '', '/images/products/tshirts/tropical_sun.png', 1200, 1, NULL],
-    ['Джинсы «розовая соль»', '', '/images/products/trousers/pink_salt.png', 2500, 4, NULL],
+    ['Джинсы «розовая соль»', '', '/images/products/trousers/pink_salt.png', 2500, 5, NULL],
     ['Лонгслив «сиреневый вихрь»', '', '/images/products/tshirts/lilac_wind.png', 1500, 1, NULL],
     ['Шоппер «туманный лес»', '', '/images/products/accessories/foggy_forest.png', 800, 3, NULL],
     ['Набор: носки и футболка «яблочный фреш»', '', '/images/products/sets/apple_fresh.png', 3000, 6, NULL],
