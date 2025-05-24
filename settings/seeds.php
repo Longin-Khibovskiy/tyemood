@@ -126,7 +126,8 @@ $pagesData = [
 ];
 
 $mainCategories = [
-    ['Футболки, лонгсливы', 'Каждая — как дневник настроения. Тай-дай, роспись, детали — ты точно найдёшь свою.', '/images/main_category/tshirt.png'],
+    ['Футболки', 'Каждая — как дневник настроения. Тай-дай, роспись, детали — ты точно найдёшь свою.', '/images/main_category/tshirt.png'],
+    ['Лонгсливы', 'Каждая — как дневник настроения. Тай-дай, роспись, детали — ты точно найдёшь свою.', '/images/main_category/tshirt.png'],
     ['Толстовки', 'Объёмные, уютные, расписанные вручную — такие вещи не греют, они говорят.', '/images/main_category/sweatshirt.png'],
     ['Аксессуары', 'Шопперы, носки, кепки и не только. Раскрась своё настроение до кончиков шнурков.', '/images/main_category/accessories.png'],
     ['Кастом под заказ', 'Мы создадим вещь по твоей идее. Просто опиши — и получи уникальный результат.', '/images/main_category/custom.png'],
@@ -141,29 +142,29 @@ $additionalCategories = [
 
 $products = [
     // Популярное
-    ['Штаны «лавандовый всплеск»', '', '/images/products/trousers/lavender_splash.png', 2500, 5, 1],
+    ['Штаны «лавандовый всплеск»', '', '/images/products/trousers/lavender_splash.png', 2500, 6, 1],
     ['Футболка «молоко с клубникой»', '', '/images/products/tshirts/milk_with_strawberry.png', 1800, 1, 1],
-    ['Носки «цветные лучи»', '', '/images/products/accessories/colored_rays.png', 1000, 3, 1],
-    ['Сумка «Амур и Хаос»', '', '/images/products/accessories/cupid_and_chaos.png', 3500, 3, 1],
+    ['Носки «цветные лучи»', '', '/images/products/accessories/colored_rays.png', 1000, 4, 1],
+    ['Сумка «Амур и Хаос»', '', '/images/products/accessories/cupid_and_chaos.png', 3500, 4, 1],
 
     // Каталог
-    ['Толстовка «лавандовый лёд»', '', '/images/products/sweetshirts/lavender_ice.png', 2800, 2, NULL],
+    ['Толстовка «лавандовый лёд»', '', '/images/products/sweetshirts/lavender_ice.png', 2800, 3, NULL],
     ['Футболка «тропическое солнце»', '', '/images/products/tshirts/tropical_sun.png', 1200, 1, NULL],
-    ['Джинсы «розовая соль»', '', '/images/products/trousers/pink_salt.png', 2500, 5, NULL],
-    ['Лонгслив «сиреневый вихрь»', '', '/images/products/tshirts/lilac_wind.png', 1500, 1, NULL],
+    ['Джинсы «розовая соль»', '', '/images/products/trousers/pink_salt.png', 2500, 6, NULL],
+    ['Лонгслив «сиреневый вихрь»', '', '/images/products/tshirts/lilac_wind.png', 1500, 2, NULL],
     ['Шоппер «туманный лес»', '', '/images/products/accessories/foggy_forest.png', 800, 3, NULL],
-    ['Набор: носки и футболка «яблочный фреш»', '', '/images/products/sets/apple_fresh.png', 3000, 6, NULL],
+    ['Набор: носки и футболка «яблочный фреш»', '', '/images/products/sets/apple_fresh.png', 3000, 7, NULL],
     ['Футболка «вечерний закат»', '', '/images/products/tshirts/evening_sunset.png', 1300, 1, NULL],
-    ['Кепка «розовый мрамор»', '', '/images/products/accessories/pink_marble.png', 1000, 3, NULL],
+    ['Кепка «розовый мрамор»', '', '/images/products/accessories/pink_marble.png', 1000, 4, NULL],
     ['Футболка «лимон и небо»', '', '/images/products/tshirts/lemon_and_sky.png', 1500, 1, NULL],
-    ['Шоппер «мшистая акварель»', '', '/images/products/accessories/mossy_watercolor.png', 850, 3, NULL],
-    ['Набор: носки 6.шт «цветные пряности»', '', '/images/products/sets/colored_spices.png', 2000, 6, NULL],
+    ['Шоппер «мшистая акварель»', '', '/images/products/accessories/mossy_watercolor.png', 850, 4, NULL],
+    ['Набор: носки 6.шт «цветные пряности»', '', '/images/products/sets/colored_spices.png', 2000, 7, NULL],
 
     // Вам может понравится
     ['Футболка «гранатовый шторм»', '', '/images/products/tshirts/garnet_storm.png', '1500', 1, 2],
-    ['Кепка «коровка-арт»', '', '/images/products/accessories/cow_art.png', 1000, 3, 2],
-    ['Толстовка «бабл гам»', '', '/images/products/sweetshirts/bubble_gum.png', 2500, 2, 2],
-    ['Лонгслив «акварельный хаос»', '', '/images/products/tshirts/watercolor_chaos.png', 2000, 1, 2]
+    ['Кепка «коровка-арт»', '', '/images/products/accessories/cow_art.png', 1000, 4, 2],
+    ['Толстовка «бабл гам»', '', '/images/products/sweetshirts/bubble_gum.png', 2500, 3, 2],
+    ['Лонгслив «акварельный хаос»', '', '/images/products/tshirts/watercolor_chaos.png', 2000, 2, 2]
 ];
 
 $characteriscticsOfProducts = [
