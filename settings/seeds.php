@@ -163,7 +163,7 @@ $products = [
     ['Футболка «гранатовый шторм»', '', '/images/products/tshirts/garnet_storm.png', '1500', 1, 2],
     ['Кепка «коровка-арт»', '', '/images/products/accessories/cow_art.png', 1000, 3, 2],
     ['Толстовка «бабл гам»', '', '/images/products/sweetshirts/bubble_gum.png', 2500, 2, 2],
-    ['Лонгслив «акварельный хаос»', '', '/images/products/watercolor_chaos.png', 2000, 1, 2]
+    ['Лонгслив «акварельный хаос»', '', '/images/products/tshirts/watercolor_chaos.png', 2000, 1, 2]
 ];
 
 $characteriscticsOfProducts = [

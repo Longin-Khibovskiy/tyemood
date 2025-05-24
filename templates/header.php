@@ -65,7 +65,7 @@
                         $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         foreach ($rows as $row):
                             ?>
-                            <a href="/" class="regular_04"><?= $row['name'] ?></a>
+                            <a href="/catalog" class="regular_04"><?= $row['name'] ?></a>
                         <?php endforeach; ?>
                     </div>
                 </div>

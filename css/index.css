@@ -92,6 +92,7 @@ h3 {
 
 /* Text */
 .semibold_01 {
+    color: var(--primary-jet);
     font-family: lato-semibold;
     font-size: 28px;
     font-style: normal;
@@ -884,4 +885,78 @@ footer {
 
 .footer_right_address_container p:nth-child(2) {
     max-width: 172px;
+}
+
+/*****************************************/
+/*             Каталог товаров           */
+/*****************************************/
+.catalog {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.catalog_container {
+    width: 100%;
+    max-width: 1440px;
+    padding: 120px 80px 160px 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.catalog_path_container {
+    display: flex;
+    gap: 12px;
+}
+
+.catalog_path_pink_text {
+    color: var(--decorative-magenta);
+}
+
+.catalog_path_text {
+    color: var(--quaternary-cadet-gray);
+}
+
+.catalog_grid {
+    margin: 80px 0 100px 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 44px;
+    row-gap: 60px;
+}
+
+.catalog_product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.catalog_product_image {
+    width: 287px;
+    height: 400px;
+    border-radius: 40px;
+}
+
+.catalog_product_description {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--primary-jet);
+}
+
+.catalog_button_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.catalog_button_container button {
+    width: fit-content;
+    border-radius: 40px;
+    border: 2px solid var(--button-mexican-pink, #E70B87);
+    padding: 20px 242px;
 }
