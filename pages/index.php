@@ -115,7 +115,7 @@
             <div class="service_container">
                 <div class="service_title_container">
                     <p class="medium_03">Коллаб-союзы</p>
-                    <p class="medium_03">(01)</p>
+                    <p class="medium_03">(04)</p>
                 </div>
                 <p class="regular_04">Открыты к смелым коллаборациям: от совместных коллекций до артов и
                     мероприятий.</p>

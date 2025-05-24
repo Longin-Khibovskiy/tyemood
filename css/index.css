@@ -38,7 +38,7 @@
     /* Button */
     --button-mexican-pink: #E70B87;
     --button-sunglow: #FFD25B;
-    --hover-selective-yellow: #3F7C235;
+    --hover-selective-yellow: #F7C235;
     --hover-dogwood-rose: #C90E79;
     --hover-scarlet: #E83C3C;
 
@@ -344,6 +344,11 @@ header {
     background-color: var(--button-mexican-pink);
     color: var(--secondary-white-smoke);
     cursor: pointer;
+    transition: 0.5s;
+}
+
+.title_left_container button:hover {
+    background-color: var(--hover-dogwood-rose);
 }
 
 .title_right_container {
@@ -497,12 +502,31 @@ header {
     border-radius: 40px;
     border: 2px solid var(--button-mexican-pink, #E70B87);
     cursor: pointer;
+    transition: 0.5s;
+}
+
+.bestsllers_button_container .button_20:hover {
+    background-color: var(--button-mexican-pink, #E70B87);
+    color: var(--secondary-white-smoke);
 }
 
 .bestsllers_button_container .button_20 svg {
     padding: 6px;
     border-radius: 100px;
     background-color: var(--button-mexican-pink);
+    transition: 0.5s;
+}
+
+.bestsllers_button_container .button_20 svg path {
+    transition: 0.5s;
+}
+
+.bestsllers_button_container .button_20:hover svg {
+    background-color: var(--secondary-white-smoke);
+}
+
+.bestsllers_button_container .button_20:hover svg path {
+    fill: var(--button-mexican-pink);
 }
 
 .section_services_container {
@@ -540,6 +564,17 @@ header {
     flex-direction: column;
     justify-content: space-between;
     padding: 32px 20px 24px 24px;
+    transition: 0.5s;
+}
+
+.service_container:nth-child(2n+1):hover {
+    background-color: #C90E79;
+    color: var(--secondary-white-smoke);
+}
+
+.service_container:nth-child(2n+2):hover {
+    background-color: var(--icon-jet);
+    color: var(--secondary-white-smoke);
 }
 
 .service_title_container {
@@ -672,6 +707,14 @@ header {
     cursor: pointer;
 }
 
+.portfolio_right_img_container svg:hover circle {
+    transition: 0.5s;
+}
+
+.portfolio_right_img_container svg:hover circle {
+    fill: var(--hover-dogwood-rose);
+}
+
 .section_idea_container {
     width: 100%;
     display: flex;
@@ -710,6 +753,17 @@ header {
     flex-direction: column;
     justify-content: space-between;
     padding: 32px 16px 12px 16px;
+    transition: 0.5s;
+}
+
+.idea_container:nth-child(2n+1):hover {
+    background-color: #C90E79;
+    color: var(--secondary-white-smoke);
+}
+
+.idea_container:nth-child(2n+2):hover {
+    background-color: var(--icon-jet);
+    color: var(--secondary-white-smoke);
 }
 
 .idea_text_center {
@@ -806,6 +860,11 @@ header {
     border: none;
     background: var(--button-sunglow, #FFD25B);
     text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.contact_right_container button:hover {
+    background: var(--hover-selective-yellow, #F7C235);
 }
 
 /* Footer */
