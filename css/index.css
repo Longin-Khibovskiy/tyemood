@@ -681,7 +681,7 @@ header {
 .ideas_container {
     width: 100%;
     max-width: 1440px;
-    padding: 160px 80px;
+    padding: 0 80px 160px 80px;
     display: flex;
     flex-direction: column;
 }
@@ -805,4 +805,83 @@ header {
     border: none;
     background: var(--button-sunglow, #FFD25B);
     text-transform: uppercase;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-jet);
+}
+
+.footer_container {
+    width: 100%;
+    max-width: 1440px;
+    padding: 32px 80px 72px 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_left_container {
+    display: flex;
+    flex-direction: column;
+    color: var(--tertiary-french-gray);
+}
+
+.footer_left_politicka_container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer_left_text {
+    max-width: 400px;
+    margin: 60px 0 20px 0;
+}
+
+.footer_consultation_container {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--decorative-magenta);
+}
+
+.footer_consultation_container svg path {
+    fill: var(--decorative-magenta);
+}
+
+.footer_right_container {
+    display: flex;
+    gap: 60px;
+}
+
+.footer_right_catalog_container,
+.footer_right_address_container,
+.footer_right_contacts_container,
+.footer_right_social_container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: var(--secondary-white-smoke);
+}
+
+.footer_right_catalog,
+.footer_right_contacts,
+.footer_right_social {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer_right_catalog_container a,
+.footer_right_social a {
+    text-decoration: none;
+    color: var(--secondary-white-smoke);
+}
+
+.footer_right_address_container p:nth-child(2) {
+    max-width: 172px;
 }

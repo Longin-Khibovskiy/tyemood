@@ -58,3 +58,11 @@ function closeDropdown() {
 document.querySelectorAll('.dropdown-menu').forEach(function (dropDownList) {
     dropDownList.onmouseleave = closeDropdown;
 });
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.dropdown-container').forEach(function (price) {
+        price.text((i, text) => {
+            const [price, currency] = text.split(' ');
+            return `${(+price).toLocaleString()} ${currency}`;
+        });
+    })
+});

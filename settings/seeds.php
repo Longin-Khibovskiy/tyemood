@@ -86,6 +86,7 @@ $sql = "CREATE TABLE IF NOT EXISTS characteristic_products (
     color VARCHAR(255),
     `type` VARCHAR(255),
     composition VARCHAR(255),
+    `size` VARCHAR(255),
     FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
 )";
 if ($conn->query($sql) === TRUE) echo "Таблица CharacteristicProducts создана успешно.\n"; else die("Ошибка создания таблицы CharacteristicProducts: " . $conn->error);
@@ -165,6 +166,10 @@ $products = [
     ['Лонгслив «акварельный хаос»', '', '/images/products/watercolor_chaos.png', 2000, 1, 2]
 ];
 
+$characteriscticsOfProducts = [
+    [6, 'тропическое солнце', 'тай-дай', '100% хлопок, мягкий и плотный трикотаж.', 'XS/S/M/L/XL']
+];
+
 foreach ($pagesData as $data) {
     $name = $conn->real_escape_string($data[0]);
     $description = $data[1] ? "'" . $conn->real_escape_string($data[1]) . "'" : "NULL";
@@ -218,6 +223,21 @@ foreach ($products as $data) {
 
     if (!$conn->query($sql)) {
         echo "Ошибка вставки в products: " . $conn->error . "\n";
+    }
+}
+
+foreach ($characteriscticsOfProducts as $data) {
+    $product_id = $conn->real_escape_string($data[0]);
+    $color = $data[1] ? "'" . $conn->real_escape_string($data[1]) . "'" : "NULL";
+    $type = $data[2] ? "'" . $conn->real_escape_string($data[2]) . "'" : "NULL";
+    $composition = $data[3] ? "'" . $conn->real_escape_string($data[3]) . "'" : "NULL";
+    $size = $data[4] ? "'" . $conn->real_escape_string($data[4]) . "'" : "NULL";
+
+    $sql = "INSERT INTO characteristic_products (product_id, color, `type`, composition, `size`) 
+            VALUES ($product_id, $color, $type, $composition, $size)";
+
+    if (!$conn->query($sql)) {
+        echo "Ошибка вставки в pages: " . $conn->error . "\n";
     }
 }
 ?>
