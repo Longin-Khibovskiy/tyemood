@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "BumBum";
+    src: url("/fonts/BumBum/UraBumBumSP.otf");
+}
+
+@font-face {
+    font-family: "lato-semibold";
+    src: url("/fonts/Lato/Lato-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: "lato-bold";
+    src: url("/fonts/Lato/Lato-Bold.ttf");
+}
+
+@font-face {
+    font-family: "lato-medium";
+    src: url("/fonts/Lato/Lato-Medium.ttf");
+}
+
+@font-face {
+    font-family: "lato-regular";
+    src: url("/fonts/Lato/Lato-Regular.ttf");
+}
