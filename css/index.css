@@ -22,3 +22,167 @@
     font-family: "lato-regular";
     src: url("/fonts/Lato/Lato-Regular.ttf");
 }
+
+:root {
+    /* Background */
+    --primary-anti-flash-white: #F0F0F0;
+    --secondary-jet: #2A2A2C;
+
+    /* Text */
+    --primary-jet: #2A2A2C;
+    --secondary-white-smoke: #F2F2F2;
+    --tertiary-french-gray: #BABDC4;
+    --quaternary-cadet-gray: #95979D;
+    --decorative-magenta: #EC0185;
+
+    /* Button */
+    --button-mexican-pink: #E70B87;
+    --button-sunglow: #FFD25B;
+    --hover-selective-yellow: #3F7C235;
+    --hover-dogwood-rose: #C90E79;
+    --hover-scarlet: #E83C3C;
+
+    /* Elements Icon */
+    --icon-jet: #2A2A2C;
+    --icon-eerie-black: #1F1F1F;
+    --icon-cadet-gray: #95979D;
+    --icon-magenta: #E70B87;
+    --icon-white-smoke: #F2F2F2;
+    --icon-pink: #FFB7EC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: BumBum, system-ui;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 112%;
+    letter-spacing: 1.28px;
+}
+
+h2 {
+    font-family: BumBum, system-ui;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: 2.4px;
+}
+
+h3 {
+    font-family: BumBum, system-ui;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: 1.92px;
+}
+
+/* Text */
+.semibold_01 {
+    font-family: lato-semibold, serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: 1.12px;
+}
+
+.bold_02 {
+    font-family: lato-bold, serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: 0.96px;
+}
+
+.medium_02 {
+    font-family: lato-medium, serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: 0.96px;
+}
+
+.semibold_03 {
+    font-family: lato-semibold, serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: 0.8px;
+}
+
+.medium_03 {
+    font-family: lato-medium, serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+    letter-spacing: 0.8px;
+}
+
+.regular_03 {
+    font-family: lato-regular, serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0.8px;
+}
+
+.regular_04 {
+    font-family: lato-regular, serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0.64px;
+}
+
+.price_semibold {
+    font-family: lato-semibold, serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: 0.8px;
+}
+
+.navigation_semibold {
+    font-family: lato-semibold, serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 132%;
+    letter-spacing: 0.72px;
+    text-transform: uppercase;
+}
+
+.button_20 {
+    font-family: lato-medium, serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 132%;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.button_18 {
+    font-family: lato-medium, serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 132%;
+    letter-spacing: 0.72px;
+    text-transform: uppercase;
+}
