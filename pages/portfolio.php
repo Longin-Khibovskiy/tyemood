@@ -22,7 +22,7 @@
                     </div>
                 <?php endif; ?>
             <?php endfor; ?>
-            <div class="portfolio_button_container">
+            <div class="portfolio_button_container" style="display:none;">
                 <button class="button_20">показать ещё</button>
             </div>
         </div>

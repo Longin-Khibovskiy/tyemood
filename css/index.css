@@ -968,7 +968,9 @@ footer {
     display: flex;
     gap: 12px;
 }
-
+.catalog_none {
+    margin: 120px 0;
+}
 .catalog_path_pink_text {
     color: var(--decorative-magenta);
 }

@@ -84,7 +84,7 @@
 </section>
 
 <section class="section_services_container">
-    <div class="services_container">
+    <div class="services_container" id="services">
         <h2>Наши возможности</h2>
         <h3>услуги</h3>
         <div class="services_grid_container">

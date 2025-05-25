@@ -59,24 +59,29 @@ $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
             <a href="/catalog" class="medium_02 catalog_path_text">Каталог /</a>
             <p class="medium_02 catalog_path_pink_text"><?= $anchor['name'] ?? 'Все товары' ?></p>
         </div>
+        <?php if (count($products) === 0): ?>
+            <h2 class="catalog_none">Товаров в данной категории пока нет</h2>
+        <?php else: ?>
+            <div class="catalog_grid">
+                <?php foreach ($products as $product): ?>
+                    <a class="catalog_product" href="/product?id=<?= $product['id'] ?>">
+                        <img src="<?= $product['image'] ?>" alt="" class="catalog_product_image">
+                        <div class="catalog_product_description">
+                            <p class="regular_03"><?= $product['name'] ?></p>
+                            <p class="regular_03"><?= $product['price'] ?> ₽</p>
+                        </div>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
 
-        <div class="catalog_grid">
-            <?php foreach ($products as $product): ?>
-                <a class="catalog_product" href="/product?id=<?= $product['id'] ?>">
-                    <img src="<?= $product['image'] ?>" alt="" class="catalog_product_image">
-                    <div class="catalog_product_description">
-                        <p class="regular_03"><?= $product['name'] ?></p>
-                        <p class="regular_03"><?= $product['price'] ?> ₽</p>
-                    </div>
-                </a>
-            <?php endforeach; ?>
-        </div>
-
-        <div class="catalog_button_container">
-            <button class="button_20" id="loadMoreBtn"
-                    data-category="<?=$category_filter ?? '', ENT_QUOTES, 'UTF-8' ?>">показать ещё
-            </button>
-        </div>
+        <?php if (count($products) === $limit): ?>
+            <div class="catalog_button_container">
+                <button class="button_20" id="loadMoreBtn"
+                        data-category="<?= htmlspecialchars($category_filter ?? '') ?>">показать ещё
+                </button>
+            </div>
+        <?php endif; ?>
     </div>
 </section>
 

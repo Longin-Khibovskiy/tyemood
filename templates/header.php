@@ -50,7 +50,7 @@
                               fill="#2A2A2C"/>
                     </svg>
                 </a>
-                <a href="/" class="navigation_semibold">Услуги</a>
+                <a href="/#services" class="navigation_semibold">Услуги</a>
                 <div class="dropdown-container">
                     <div class="dropdown-toggle hover-dropdown navigation_semibold">
                         Каталог
@@ -69,7 +69,7 @@
                         <?php endforeach; ?>
                     </div>
                 </div>
-                <a href="/" class="navigation_semibold">Портфолио</a>
+                <a href="/portfolio" class="navigation_semibold">Портфолио</a>
                 <a href="/" class="navigation_semibold">FAQ</a>
                 <a href="/" class="navigation_semibold">Контакты</a>
             </div>
