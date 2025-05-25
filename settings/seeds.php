@@ -41,7 +41,8 @@ $sql = "CREATE TABLE IF NOT EXISTS main_categories (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     description VARCHAR(255),
-    image VARCHAR(255)
+    image VARCHAR(255),
+    anchor VARCHAR(255)
 )";
 if ($conn->query($sql) === TRUE) echo "Таблица MainCategories создана успешно.\n"; else die("Ошибка создания таблицы MainCategories: " . $conn->error);
 
@@ -126,13 +127,13 @@ $pagesData = [
 ];
 
 $mainCategories = [
-    ['Футболки', 'Каждая — как дневник настроения. Тай-дай, роспись, детали — ты точно найдёшь свою.', '/images/main_category/tshirt.png'],
-    ['Лонгсливы', 'Каждая — как дневник настроения. Тай-дай, роспись, детали — ты точно найдёшь свою.', '/images/main_category/tshirt.png'],
-    ['Толстовки', 'Объёмные, уютные, расписанные вручную — такие вещи не греют, они говорят.', '/images/main_category/sweatshirt.png'],
-    ['Аксессуары', 'Шопперы, носки, кепки и не только. Раскрась своё настроение до кончиков шнурков.', '/images/main_category/accessories.png'],
-    ['Кастом под заказ', 'Мы создадим вещь по твоей идее. Просто опиши — и получи уникальный результат.', '/images/main_category/custom.png'],
-    ['Штаны', '', '/images/main_category/trousers.png'],
-    ['Наборы', '', '']
+    ['Футболки', 'Каждая — как дневник настроения. Тай-дай, роспись, детали — ты точно найдёшь свою.', '/images/main_category/tshirt.png', 'tshirts'],
+    ['Лонгсливы', 'Каждая — как дневник настроения. Тай-дай, роспись, детали — ты точно найдёшь свою.', '/images/main_category/tshirt.png', 'long_sleeves'],
+    ['Толстовки', 'Объёмные, уютные, расписанные вручную — такие вещи не греют, они говорят.', '/images/main_category/sweatshirt.png', 'hoodies'],
+    ['Аксессуары', 'Шопперы, носки, кепки и не только. Раскрась своё настроение до кончиков шнурков.', '/images/main_category/accessories.png', 'accessories'],
+    ['Кастом под заказ', 'Мы создадим вещь по твоей идее. Просто опиши — и получи уникальный результат.', '/images/main_category/custom.png', 'custom'],
+    ['Штаны', '', '/images/main_category/trousers.png', 'trousers'],
+    ['Наборы', '', '', 'sets']
 ];
 
 $additionalCategories = [
@@ -152,7 +153,7 @@ $products = [
     ['Футболка «тропическое солнце»', '', '/images/products/tshirts/tropical_sun.png', 1200, 1, NULL],
     ['Джинсы «розовая соль»', '', '/images/products/trousers/pink_salt.png', 2500, 6, NULL],
     ['Лонгслив «сиреневый вихрь»', '', '/images/products/tshirts/lilac_wind.png', 1500, 2, NULL],
-    ['Шоппер «туманный лес»', '', '/images/products/accessories/foggy_forest.png', 800, 3, NULL],
+    ['Шоппер «туманный лес»', '', '/images/products/accessories/foggy_forest.png', 800, 4, NULL],
     ['Набор: носки и футболка «яблочный фреш»', '', '/images/products/sets/apple_fresh.png', 3000, 7, NULL],
     ['Футболка «вечерний закат»', '', '/images/products/tshirts/evening_sunset.png', 1300, 1, NULL],
     ['Кепка «розовый мрамор»', '', '/images/products/accessories/pink_marble.png', 1000, 4, NULL],
@@ -188,9 +189,10 @@ foreach ($mainCategories as $data) {
     $name = $conn->real_escape_string($data[0]);
     $description = $data[1] ? "'" . $conn->real_escape_string($data[1]) . "'" : "NULL";
     $image = $data[2] ? "'" . $conn->real_escape_string($data[2]) . "'" : "NULL";
+    $anchor = $data[3] ? "'" . $conn->real_escape_string($data[3]) . "'" : "NULL";
 
-    $sql = "INSERT INTO main_categories (name, description, image) 
-            VALUES ('$name', $description, $image)";
+    $sql = "INSERT INTO main_categories (name, description, image, anchor) 
+            VALUES ('$name', $description, $image, $anchor)";
 
     if (!$conn->query($sql)) {
         echo "Ошибка вставки в main_categories: " . $conn->error . "\n";
