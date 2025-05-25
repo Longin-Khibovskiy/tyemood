@@ -110,6 +110,15 @@ h3 {
     letter-spacing: 0.96px;
 }
 
+.bold_04 {
+    font-family: lato-bold;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: 0.64px;
+}
+
 .medium_02 {
     font-family: lato-medium;
     font-size: 24px;
@@ -968,9 +977,11 @@ footer {
     display: flex;
     gap: 12px;
 }
+
 .catalog_none {
     margin: 120px 0;
 }
+
 .catalog_path_pink_text {
     color: var(--decorative-magenta);
 }
@@ -1222,6 +1233,14 @@ footer {
     column-gap: 44px;
 }
 
+section.faq {
+    padding: 80px 80px 160px 80px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 44px;
+}
+
 .faq img {
     width: 100%;
     border-radius: 40px;
@@ -1281,4 +1300,87 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 80px;
+}
+
+.faq_title {
+    padding: 120px 80px 0 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.faq_title h2 {
+    width: 100%;
+    text-align: left;
+    color: var(--primary-jet);
+}
+
+.faq_title h3 {
+    width: 100%;
+    text-align: right;
+    color: var(--decorative-magenta);
+}
+
+/*****************************************/
+/*                Избранное              */
+/*****************************************/
+.favorites {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.favorites_container {
+    width: 100%;
+    max-width: 1440px;
+    padding: 120px 80px 160px 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.favorites_container h3 {
+    color: var(--primary-jet);
+}
+
+.favorites_container hr {
+    margin: 32px 0 60px 0;
+    border: 0.5px solid var(--primary-jet);
+}
+
+.favorite_container {
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    padding: 24px;
+    border: 1px solid var(--quaternary-cadet-gray);
+    border-radius: 40px;
+}
+
+.favorite_img {
+    border-radius: 32px;
+    width: 400px;
+}
+
+.favorite_description_container {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.favorite_description {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: var(--quaternary-cadet-gray);
+}
+
+.favorite_right_container {
+    width: 14%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
 }
