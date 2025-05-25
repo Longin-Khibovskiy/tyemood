@@ -68,10 +68,47 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
 document.querySelectorAll('.faq-question').forEach(button => {
     button.addEventListener('click', () => {
         const item = button.parentElement;
         item.classList.toggle('active');
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Обработчик клика по иконке "Избранное"
+    document.addEventListener('click', (e) => {
+        const favIcon = e.target.closest('.favorite');
+        if (!favIcon) return;
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        const productId = favIcon.dataset.productId;
+        const isActive = favIcon.classList.contains('active');
+
+        const url = isActive
+            ? '/pages/remove_from_favorites.php'
+            : '/pages/add_to_favorites.php';
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: `product_id=${productId}`
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    favIcon.classList.toggle('active');
+                } else {
+                    console.error('Ошибка сервера:', data.message);
+                }
+            })
+            .catch(err => {
+                console.error('Ошибка при работе с избранным:', err);
+            });
+    });
+});
+

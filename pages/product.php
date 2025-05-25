@@ -1,4 +1,14 @@
 <?php
+
+$favorite_ids = [];
+$sql = "SELECT product_id FROM guest_favorites WHERE guest_token = ?";
+$stmt = $link->prepare($sql);
+$stmt->bind_param("s", $_SESSION['guest_token']);
+$stmt->execute();
+$result = $stmt->get_result();
+while ($row = $result->fetch_assoc()) {
+    $favorite_ids[] = $row['product_id'];
+}
 $product_id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 if ($product_id <= 0) {
     echo "Товар не найден.";
@@ -64,7 +74,9 @@ if (!$product) {
                 </div>
                 <div class="product_basket_like">
                     <button class="button_18 product_basket">Добавить в корзину</button>
-                    <svg class="product_like" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                    <svg class="product_like favorite <?= in_array($product['id'], $favorite_ids) ? 'active' : '' ?>"
+                         data-product-id="<?= $product['id'] ?>"
+                         xmlns="http://www.w3.org/2000/svg" width="32" height="32"
                          viewBox="0 0 32 32" fill="none">
                         <path d="M10.3333 4C6.836 4 4 7.19059 4 11.1252C4 19 16 28 16 28C16 28 28 19 28 11.1252C28 6.25035 25.164 4 21.6667 4C19.1867 4 17.04 5.60376 16 7.93882C14.96 5.60376 12.8133 4 10.3333 4Z"
                               stroke="#2A2A2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -131,15 +143,15 @@ if (!$product) {
         <div class="product_like_you">
             <h3>Вам может понравится</h3>
             <div class="catalog_grid">
-            <?php foreach ($like as $likes): ?>
-                <a class="catalog_product" href="/product?id=<?= $likes['id'] ?>">
-                    <img src="<?= $likes['image'] ?>" alt="" class="catalog_product_image">
-                    <div class="catalog_product_description">
-                        <p class="regular_03"><?= $likes['name'] ?></p>
-                        <p class="regular_03"><?= $likes['price'] ?> ₽</p>
-                    </div>
-                </a>
-            <?php endforeach; ?>
+                <?php foreach ($like as $likes): ?>
+                    <a class="catalog_product" href="/product?id=<?= $likes['id'] ?>">
+                        <img src="<?= $likes['image'] ?>" alt="" class="catalog_product_image">
+                        <div class="catalog_product_description">
+                            <p class="regular_03"><?= $likes['name'] ?></p>
+                            <p class="regular_03"><?= $likes['price'] ?> ₽</p>
+                        </div>
+                    </a>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>

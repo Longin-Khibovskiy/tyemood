@@ -1008,6 +1008,21 @@ footer {
     gap: 20px;
 }
 
+.catalog_product_like {
+    z-index: 100;
+    position: absolute;
+    margin: 0 0 30% 16%;
+}
+.catalog_product_like.favorite.active {
+    fill: red;
+}
+
+.catalog_product_like.active path {
+    fill: red;
+    stroke: none;
+}
+
+
 .catalog_product_image {
     width: 287px;
     max-height: 400px;
@@ -1212,6 +1227,13 @@ footer {
     align-items: center;
     border-radius: 20px;
     border: 1px solid var(--icon-jet, #2A2A2C);
+}
+.product_like.favorite.active {
+    fill: red;
+}
+
+.favorite.active path {
+    stroke: none;
 }
 
 .product_hr {

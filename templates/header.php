@@ -11,6 +11,14 @@
     <script src="/js/app.js" defer></script>
 </head>
 <body>
+<?php
+session_start();
+
+if (!isset($_SESSION['guest_token'])) {
+    $_SESSION['guest_token'] = bin2hex(random_bytes(16));
+}
+$guest_token = $_SESSION['guest_token'];
+?>
 <header>
     <div class="header_container">
         <div class="header_logo_container">

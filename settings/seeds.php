@@ -94,13 +94,20 @@ if ($conn->query($sql) === TRUE) echo "Таблица CharacteristicProducts с�
 
 ## Создание таблицы Избранных товаров
 $sql = "CREATE TABLE IF NOT EXISTS selected_products (
-    user_id INT NOT NULL,
+    session_id VARCHAR(255) NOT NULL,
     product_id INT NOT NULL,
     saved_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (user_id, product_id),
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    PRIMARY KEY (session_id, product_id),
     FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
-)";
+);";
+if ($conn->query($sql) === TRUE) echo "Таблица SelectedProducts создана успешно.\n"; else die("Ошибка создания таблицы SelectedProducts: " . $conn->error);
+$sql = "CREATE TABLE IF NOT EXISTS guest_favorites (
+    guest_token VARCHAR(64) NOT NULL,
+    product_id INT NOT NULL,
+    saved_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (guest_token, product_id),
+    FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
+);";
 if ($conn->query($sql) === TRUE) echo "Таблица SelectedProducts создана успешно.\n"; else die("Ошибка создания таблицы SelectedProducts: " . $conn->error);
 
 
