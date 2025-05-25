@@ -18,13 +18,13 @@ if (isset($_GET['ajax']) && $_GET['ajax'] == '1') {
     $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
     foreach ($products as $product): ?>
-        <div class="catalog_product">
+        <a class="catalog_product" href="/product?id=<?= $product['id'] ?>">
             <img src="<?= $product['image'] ?>" alt="" class="catalog_product_image">
             <div class="catalog_product_description">
-                <p class="regular_03"><?= htmlspecialchars($product['name']) ?></p>
-                <p class="regular_03"><?= htmlspecialchars($product['price']) ?> ₽</p>
+                <p class="regular_03"><?= $product['name'] ?></p>
+                <p class="regular_03"><?= $product['price'] ?> ₽</p>
             </div>
-        </div>
+        </a>
     <?php endforeach;
     exit;
 }
@@ -62,18 +62,21 @@ $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
         <div class="catalog_grid">
             <?php foreach ($products as $product): ?>
-                <div class="catalog_product">
+                <a class="catalog_product" href="/product?id=<?= $product['id'] ?>">
                     <img src="<?= $product['image'] ?>" alt="" class="catalog_product_image">
                     <div class="catalog_product_description">
-                        <p class="regular_03"><?= htmlspecialchars($product['name']) ?></p>
-                        <p class="regular_03"><?= htmlspecialchars($product['price']) ?> ₽</p>
+                        <p class="regular_03"><?= $product['name'] ?></p>
+                        <p class="regular_03"><?= $product['price'] ?> ₽</p>
                     </div>
-                </div>
+                </a>
             <?php endforeach; ?>
         </div>
 
         <div class="catalog_button_container">
-            <button class="button_20" id="loadMoreBtn" data-category="<?= htmlspecialchars($category_filter ?? '', ENT_QUOTES, 'UTF-8') ?>">показать ещё</button>        </div>
+            <button class="button_20" id="loadMoreBtn"
+                    data-category="<?=$category_filter ?? '', ENT_QUOTES, 'UTF-8' ?>">показать ещё
+            </button>
+        </div>
     </div>
 </section>
 

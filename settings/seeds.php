@@ -70,7 +70,7 @@ if ($conn->query($sql) === TRUE) echo "Таблица Users создана ус�
 $sql = "CREATE TABLE IF NOT EXISTS products (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    description VARCHAR(255),
+    description TEXT,
     image VARCHAR(255),
     price INT,
     main_categories_id INT NOT NULL,
@@ -150,7 +150,7 @@ $products = [
 
     // Каталог
     ['Толстовка «лавандовый лёд»', '', '/images/products/sweetshirts/lavender_ice.png', 2800, 3, NULL],
-    ['Футболка «тропическое солнце»', '', '/images/products/tshirts/tropical_sun.png', 1200, 1, NULL],
+    ['Футболка «тропическое солнце»', 'Базовая футболка из 100% хлопка, окрашенная вручную с использованием щадящих красителей. Техника тай-дай делает каждую вещь уникальной — рисунок на вашей футболке будет только у вас./Плотная, но мягкая ткань сохраняет форму и цвет даже после множества стирок.', '/images/products/tshirts/tropical_sun.png', 1200, 1, NULL],
     ['Джинсы «розовая соль»', '', '/images/products/trousers/pink_salt.png', 2500, 6, NULL],
     ['Лонгслив «сиреневый вихрь»', '', '/images/products/tshirts/lilac_wind.png', 1500, 2, NULL],
     ['Шоппер «туманный лес»', '', '/images/products/accessories/foggy_forest.png', 800, 4, NULL],
