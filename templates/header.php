@@ -79,7 +79,7 @@ $guest_token = $_SESSION['guest_token'];
                 </div>
                 <a href="/portfolio" class="navigation_semibold">Портфолио</a>
                 <a href="/faq" class="navigation_semibold">FAQ</a>
-                <a href="/" class="navigation_semibold">Контакты</a>
+                <a href="/#contacts" class="navigation_semibold">Контакты</a>
             </div>
         </div>
     </div>

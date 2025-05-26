@@ -238,7 +238,7 @@ while ($row = $result->fetch_assoc()) {
 </section>
 
 <section class="section_contacts_container">
-    <div class="contacts_container">
+    <div class="contacts_container" id="contacts">
         <h2>Контакты для связи и вдохновения</h2>
         <div class="contact_container">
             <div class="contact_left_container">
