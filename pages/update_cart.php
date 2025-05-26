@@ -20,7 +20,7 @@ if (!$data || !isset($data['action'], $data['product_id'], $data['size'])) {
 }
 
 $action = $data['action'];
-$product_id = (int) $data['product_id'];
+$product_id = (int)$data['product_id'];
 $size = trim($data['size']);
 
 $stmt = $link->prepare("SELECT quantity FROM guest_cart WHERE guest_token = ? AND product_id = ? AND size = ?");
@@ -73,5 +73,11 @@ if ($action === "minus") {
     }
     exit;
 }
-
+if ($action === 'delete_from_cart') {
+    $stmt = $link->prepare("DELETE FROM guest_cart WHERE guest_token = ? AND product_id = ? AND size = ?");
+    $stmt->bind_param("sis", $guest_token, $product_id, $size);
+    $stmt->execute();
+    echo json_encode(['success' => true]);
+    exit;
+}
 echo json_encode(['success' => false, 'error' => 'Неизвестное действие']);

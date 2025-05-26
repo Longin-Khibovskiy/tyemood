@@ -300,7 +300,7 @@ header {
     background: #D2D5DB;
     margin-top: 12px;
     min-width: 100px;
-    z-index: 100;
+    z-index: 1000;
     border-radius: 20px;
 }
 
@@ -1462,4 +1462,78 @@ section.faq {
 
 .favorite_right_container svg:hover {
     scale: 1.2;
+}
+
+/*****************************************/
+/*                 Корзина               */
+/*****************************************/
+.basket {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.baskets_container {
+    width: 100%;
+    max-width: 1440px;
+    padding: 120px 80px 160px 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.baskets_container .product_basket_like {
+    margin-top: 8px;
+    display: flex;
+    gap: 40px;
+}
+
+.baskets_container .product_basket {
+    cursor: pointer;
+    display: flex;
+    width: fit-content;
+    padding: 16px 44px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--primary-jet);
+    border-radius: 32px;
+    background: transparent;
+}
+
+.baskets_container .product_basket:hover {
+    background: transparent;
+}
+
+.baskets_container .product_basket.active {
+    cursor: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 44px;
+}
+
+.baskets_container .product_basket.active:hover {
+    background: transparent;
+}
+
+.baskets_container .product_basket_minus, .product_basket_plus {
+    color: var(--primary-jet);
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.basket_summ_hr {
+    margin: 60px 0 28px 0;
+    border: 1px solid var(--primary-jet);
+}
+
+.basket_summ_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.basket_summ_container p {
+    font-size: 32px;
 }

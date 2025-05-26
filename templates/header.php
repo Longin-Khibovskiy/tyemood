@@ -38,11 +38,13 @@ $guest_token = $_SESSION['guest_token'];
                 </svg>
             </a>
             <div class="header_icons_container">
-                <svg onclick="location.href='/favorites'" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg onclick="location.href='/favorites'" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
                     <path d="M10.3333 4C6.836 4 4 7.19059 4 11.1252C4 19 16 28 16 28C16 28 28 19 28 11.1252C28 6.25035 25.164 4 21.6667 4C19.1867 4 17.04 5.60376 16 7.93882C14.96 5.60376 12.8133 4 10.3333 4Z"
                           stroke="#2A2A2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg onclick="location.href='/basket'" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
                     <path d="M5.73463 20.775L4.2138 11.8C3.98391 10.4425 3.86896 9.765 4.2378 9.32C4.60538 8.875 5.28242 8.875 6.63525 8.875H25.3652C26.718 8.875 27.3951 8.875 27.7626 9.32C28.1315 9.765 28.0153 10.4425 27.7866 11.8L26.2658 20.775C25.7618 23.75 25.5104 25.2363 24.481 26.1188C23.4528 27 21.9698 27 19.004 27H12.9965C10.0306 27 8.54765 27 7.51945 26.1175C6.48999 25.2363 6.23862 23.7487 5.73463 20.7737M22.9475 8.875C22.9475 7.05164 22.2156 5.30295 20.9127 4.01364C19.6098 2.72433 17.8428 2 16.0002 2C14.1577 2 12.3906 2.72433 11.0877 4.01364C9.78486 5.30295 9.05291 7.05164 9.05291 8.875"
                           stroke="#2A2A2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
