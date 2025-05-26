@@ -1482,6 +1482,11 @@ section.faq {
     flex-direction: column;
 }
 
+.baskets_container h2 {
+    color: var(--primary-jet);
+    margin-bottom: 64px;
+}
+
 .baskets_container .product_basket_like {
     margin-top: 8px;
     display: flex;

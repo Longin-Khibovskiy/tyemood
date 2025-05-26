@@ -20,7 +20,7 @@ $summ = 0;
 ?>
 <section class="basket">
     <div class="baskets_container">
-        <h3>Избранное</h3>
+        <h2>Ваша подборка</h2>
         <hr>
         <?php
         $stmt = $link->prepare("
