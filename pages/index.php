@@ -1,3 +1,17 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+$favorite_ids = [];
+$sql = "SELECT product_id FROM guest_favorites WHERE guest_token = ?";
+$stmt = $link->prepare($sql);
+$stmt->bind_param("s", $_SESSION['guest_token']);
+$stmt->execute();
+$result = $stmt->get_result();
+while ($row = $result->fetch_assoc()) {
+    $favorite_ids[] = $row['product_id'];
+}
+?>
 <section class="section_title_container">
     <div class="title_container">
         <div class="title_left_container">
@@ -49,20 +63,25 @@
             <?php
             $result = $link->query('SELECT * FROM products WHERE additional_categories_id = 1');
             $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
-            foreach ($rows as $row):
-                ?>
-                <div class="bestsellers_product">
-                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7.33333 1C3.836 1 1 4.19059 1 8.12518C1 16 13 25 13 25C13 25 25 16 25 8.12518C25 3.25035 22.164 1 18.6667 1C16.1867 1 14.04 2.60376 13 4.93882C11.96 2.60376 9.81333 1 7.33333 1Z"
-                              fill="#F2F2F2" stroke="#F2F2F2" stroke-width="2" stroke-linecap="round"
-                              stroke-linejoin="round"/>
-                    </svg>
-                    <img src="<?= $row['image'] ?>" alt="">
-                    <div class="bestsellers_product_text">
-                        <p class="regular_03"><?= $row['name'] ?></p>
-                        <p class="price_semibold"><?= $row['price'] ?> ₽</p>
-                    </div>
+                foreach ($rows as $row):
+                    $isFavorite = in_array($row['id'], $favorite_ids);
+                    ?>
+            <a class="catalog_product" href="/product?id=<?= $row['id'] ?>">
+                <svg class="catalog_product_like favorite <?= $isFavorite ? 'active' : '' ?>"
+                     data-product-id="<?= $row['id'] ?>"
+                     width="32" height="32" viewBox="0 0 32 32" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.3333 4C6.836 4 4 7.19059 4 11.1252C4 19 16 28 16 28C16 28 28 19 28 11.1252C28 6.25035 25.164 4 21.6667 4C19.1867 4 17.04 5.60376 16 7.93882C14.96 5.60376 12.8133 4 10.3333 4Z"
+                          fill="#F2F2F2"
+                          stroke="#F2F2F2"
+                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <img src="<?= $row['image'] ?>" alt="" class="catalog_product_image">
+                <div class="catalog_product_description">
+                    <p class="regular_03"><?= $row['name'] ?></p>
+                    <p class="regular_03"><?= $row['price'] ?> ₽</p>
                 </div>
+            </a>
             <?php endforeach; ?>
         </div>
         <div class="bestsllers_button_container">

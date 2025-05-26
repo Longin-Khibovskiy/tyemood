@@ -1,5 +1,7 @@
 <?php
-
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 $favorite_ids = [];
 $sql = "SELECT product_id FROM guest_favorites WHERE guest_token = ?";
 $stmt = $link->prepare($sql);
@@ -143,8 +145,20 @@ if (!$product) {
         <div class="product_like_you">
             <h3>Вам может понравится</h3>
             <div class="catalog_grid">
-                <?php foreach ($like as $likes): ?>
+                <?php
+                foreach ($like as $likes):
+                    $isFavorite = in_array($likes['id'], $favorite_ids);
+                    ?>
                     <a class="catalog_product" href="/product?id=<?= $likes['id'] ?>">
+                        <svg class="catalog_product_like favorite <?= $isFavorite ? 'active' : '' ?>"
+                             data-product-id="<?= $likes['id'] ?>"
+                             width="32" height="32" viewBox="0 0 32 32" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.3333 4C6.836 4 4 7.19059 4 11.1252C4 19 16 28 16 28C16 28 28 19 28 11.1252C28 6.25035 25.164 4 21.6667 4C19.1867 4 17.04 5.60376 16 7.93882C14.96 5.60376 12.8133 4 10.3333 4Z"
+                                  fill="#F2F2F2"
+                                  stroke="#F2F2F2"
+                                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                         <img src="<?= $likes['image'] ?>" alt="" class="catalog_product_image">
                         <div class="catalog_product_description">
                             <p class="regular_03"><?= $likes['name'] ?></p>
