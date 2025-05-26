@@ -21,7 +21,6 @@ $summ = 0;
 <section class="basket">
     <div class="baskets_container">
         <h2>Ваша подборка</h2>
-        <hr>
         <?php
         $stmt = $link->prepare("
     SELECT 
@@ -34,9 +33,9 @@ $summ = 0;
         $stmt->execute();
         $result = $stmt->get_result();
         if ($result->num_rows === 0) {
-            echo "<p>Ваша корзина пуста.</p>";
+            echo "<h3>Ваша корзина пуста.</h3>";
         } else {
-            echo "<div class='cart_items'>";
+            echo "<hr><div class='cart_items'>";
             while ($product = $result->fetch_assoc()):
                 $prod_id = $product['id'];
                 $sql = $link->query("SELECT * FROM characteristic_products WHERE product_id = $prod_id");
@@ -114,6 +113,9 @@ $summ = 0;
         <div class="basket_summ_container">
             <p class="semibold_01">Сумма:</p>
             <p class="price_semibold"><?= $summ ?> ₽</p>
+        </div>
+        <div class="basket_checkout_button_container" style="<?php if ($result->num_rows === 0) echo 'display:none'?>">
+            <button class="button_20" onclick="location.href = '/checkout'">оформить заказ</button>
         </div>
     </div>
 </section>
