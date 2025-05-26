@@ -1200,6 +1200,26 @@ footer {
     gap: 32px;
 }
 
+.product_size {
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: transparent;
+    border: none;
+
+}
+
+.product_size:hover {
+    scale: 1.2;
+    font-family: lato-bold;
+    font-weight: 800;
+}
+
+.product_size.selected-size {
+    padding: 12px;
+    border: 1px solid var(--primary-jet);
+    border-radius: 12px;
+}
+
 .product_basket_like {
     margin-top: 8px;
     display: flex;
@@ -1221,6 +1241,23 @@ footer {
 
 .product_basket:hover {
     background: var(--hover-selective-yellow);
+}
+
+.product_basket.active {
+    cursor: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.product_basket.active:hover {
+    background: var(--button-sunglow);
+}
+
+.product_basket_minus, .product_basket_plus {
+    color: var(--primary-jet);
+    cursor: pointer;
+    font-size: 24px;
 }
 
 .product_like {

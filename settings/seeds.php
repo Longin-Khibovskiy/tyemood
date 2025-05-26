@@ -121,6 +121,14 @@ $sql = "CREATE TABLE IF NOT EXISTS basket_products (
     FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
 )";
 if ($conn->query($sql) === TRUE) echo "Таблица BasketProducts создана успешно.\n"; else die("Ошибка создания таблицы BasketProducts: " . $conn->error);
+$sql = "CREATE TABLE guest_cart (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    guest_token VARCHAR(255),
+    product_id INT,
+    size VARCHAR(10),
+    quantity INT DEFAULT 1
+)";
+if ($conn->query($sql) === TRUE) echo "Таблица BasketProducts создана успешно.\n"; else die("Ошибка создания таблицы BasketProducts: " . $conn->error);
 
 
 $pagesData = [
