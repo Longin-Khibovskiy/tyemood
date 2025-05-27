@@ -1702,6 +1702,7 @@ section.faq {
     flex-direction: column;
     gap: 24px;
 }
+
 .checkout_address_form input {
     display: flex;
     max-width: 540px;
@@ -1768,6 +1769,7 @@ section.faq {
     transition: all 0.2s linear;
     transition-delay: 0.15s;
 }
+
 .checkout_button_container {
     width: 100%;
     display: flex;
@@ -1787,10 +1789,12 @@ section.faq {
 .checkout_button_container button:hover {
     background-color: var(--hover-dogwood-rose);
 }
+
 .checkout_none {
     margin-top: 20px;
     color: var(--quaternary-cadet-gray);
 }
+
 .checkout_right_container {
     margin-top: 40px;
     display: flex;
@@ -1798,6 +1802,7 @@ section.faq {
     flex-direction: column;
     gap: 40px;
 }
+
 .checkout_product_container {
     width: 100%;
     padding: 20px;
@@ -1806,6 +1811,7 @@ section.faq {
     display: flex;
     gap: 24px;
 }
+
 .checkout_product_container img {
     width: 250px;
     height: 250px;
@@ -1813,21 +1819,25 @@ section.faq {
     object-fit: cover;
     aspect-ratio: 1/1;
 }
+
 .checkout_product_description {
     display: flex;
     flex-direction: column;
 }
+
 .checkout_product_description .product_characteristics_main {
     margin: 8px 0 0 0;
     color: var(--quaternary-cadet-gray);
 }
+
 .checkout_product_price_container {
     height: -webkit-fill-available;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
 }
-.checkout_delete_product{
+
+.checkout_delete_product {
     cursor: pointer;
     margin-bottom: 4px;
     color: var(--quaternary-cadet-gray, #95979D);
@@ -1843,16 +1853,78 @@ section.faq {
     text-underline-offset: auto;
     text-underline-position: from-font;
 }
+
 .checkout_right_container hr {
     border: 0.5px solid var(--icon-jet);
     margin: 40px 0 0 0;
 }
+
 .checkout_product_summ {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .checkout_product_description .product_characteristics_main p {
     font-size: 12px;
+}
+
+
+/*****************************************/
+/*                  Адаптив              */
+/*****************************************/
+@media (max-width: 974px) {
+    .header_logo img {
+        display: none;
+    }
+
+    .header_consultation_container svg {
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+    .header_logo_container {
+        padding: 0 40px 0 30px;
+    }
+}
+
+@media (max-width: 660px) {
+    .header_navigation {
+        justify-content: center;
+        flex-wrap: wrap;
+        row-gap: 8px;
+        align-items: center;
+    }
+
+    .header_navigation a, .dropdown-toggle.hover-dropdown.navigation_semibold {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (max-width: 614px) {
+    .header_logo_container {
+        padding: 0 12px 0 8px;
+    }
+
+    .header_logo {
+        margin-right: 6%;
+    }
+
+    .header_icons_container {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 506px) {
+    h3 {
+        font-size: 32px;
+    }
+
+    .header_consultation_container {
+        display: none;
+    }
 }
