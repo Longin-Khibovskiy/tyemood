@@ -1778,6 +1778,7 @@ section.faq {
 }
 
 .checkout_button_container button {
+    width: -webkit-fill-available;
     padding: 20px 120px;
     background-color: var(--button-mexican-pink);
     border-radius: 40px;

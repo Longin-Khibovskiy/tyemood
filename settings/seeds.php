@@ -42,7 +42,8 @@ $sql = "CREATE TABLE IF NOT EXISTS main_categories (
     name VARCHAR(255) NOT NULL,
     description VARCHAR(255),
     image VARCHAR(255),
-    anchor VARCHAR(255)
+    anchor VARCHAR(255),
+    link VARCHAR(255)
 )";
 if ($conn->query($sql) === TRUE) echo "Таблица MainCategories создана успешно.\n"; else die("Ошибка создания таблицы MainCategories: " . $conn->error);
 
@@ -55,16 +56,6 @@ $sql = "CREATE TABLE IF NOT EXISTS additional_categories (
     image VARCHAR(255)
 )";
 if ($conn->query($sql) === TRUE) echo "Таблица AdditionalCategories создана успешно.\n"; else die("Ошибка создания таблицы AdditionalCategories: " . $conn->error);
-
-## Создание таблицы пользователя
-$sql = "CREATE TABLE IF NOT EXISTS users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(255) UNIQUE NOT NULL,
-    username VARCHAR(50) UNIQUE NOT NULL,
-    password_hash VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-)";
-if ($conn->query($sql) === TRUE) echo "Таблица Users создана успешно.\n"; else die("Ошибка создания таблицы Users: " . $conn->error);
 
 ## Создание таблицы товаров
 $sql = "CREATE TABLE IF NOT EXISTS products (
@@ -93,62 +84,53 @@ $sql = "CREATE TABLE IF NOT EXISTS characteristic_products (
 if ($conn->query($sql) === TRUE) echo "Таблица CharacteristicProducts создана успешно.\n"; else die("Ошибка создания таблицы CharacteristicProducts: " . $conn->error);
 
 ## Создание таблицы Избранных товаров
-$sql = "CREATE TABLE IF NOT EXISTS selected_products (
-    session_id VARCHAR(255) NOT NULL,
-    product_id INT NOT NULL,
-    saved_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (session_id, product_id),
-    FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
-);";
-if ($conn->query($sql) === TRUE) echo "Таблица SelectedProducts создана успешно.\n"; else die("Ошибка создания таблицы SelectedProducts: " . $conn->error);
 $sql = "CREATE TABLE IF NOT EXISTS guest_favorites (
     guest_token VARCHAR(64) NOT NULL,
     product_id INT NOT NULL,
     saved_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (guest_token, product_id),
     FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
 );";
 if ($conn->query($sql) === TRUE) echo "Таблица SelectedProducts создана успешно.\n"; else die("Ошибка создания таблицы SelectedProducts: " . $conn->error);
 
 
 ## Создание таблицы Корзины
-$sql = "CREATE TABLE IF NOT EXISTS basket_products (
-    user_id INT NOT NULL,
-    product_id INT NOT NULL,
-    saved_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (user_id, product_id),
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
-    FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
-)";
-if ($conn->query($sql) === TRUE) echo "Таблица BasketProducts создана успешно.\n"; else die("Ошибка создания таблицы BasketProducts: " . $conn->error);
-$sql = "CREATE TABLE guest_cart (
+$sql = "CREATE TABLE IF NOT EXISTS guest_cart (
     id INT AUTO_INCREMENT PRIMARY KEY,
     guest_token VARCHAR(255),
     product_id INT,
     size VARCHAR(10),
-    quantity INT DEFAULT 1
+    quantity INT DEFAULT 1,
+    FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
 )";
 if ($conn->query($sql) === TRUE) echo "Таблица BasketProducts создана успешно.\n"; else die("Ошибка создания таблицы BasketProducts: " . $conn->error);
+
+## Создание таблицы Корзины
+$sql = "CREATE TABLE IF NOT EXISTS feedback (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    `name` VARCHAR(255),
+    phone_number VARCHAR(255)
+)";
+if ($conn->query($sql) === TRUE) echo "Таблица feedback создана успешно.\n"; else die("Ошибка создания таблицы BasketProducts: " . $conn->error);
 
 
 $pagesData = [
     ['Главная', '', '/'],
     ['Каталог', '', '/catalog'],
     ['Портфолио', '', '/portfolio'],
-    ['FAQ', '', '/'],
-    ['Оформление заказа', '', '/'],
-    ['Избранное', '', '/'],
-    ['Корзина', '', '/'],
+    ['FAQ', '', '/faq'],
+    ['Оформление заказа', '', '/checkout'],
+    ['Избранное', '', '/favorites'],
+    ['Корзина', '', '/basket'],
 ];
 
 $mainCategories = [
-    ['Футболки', 'Каждая — как дневник настроения. Тай-дай, роспись, детали — ты точно найдёшь свою.', '/images/main_category/tshirt.png', 'tshirts'],
-    ['Лонгсливы', 'Каждая — как дневник настроения. Тай-дай, роспись, детали — ты точно найдёшь свою.', '/images/main_category/tshirt.png', 'long_sleeves'],
-    ['Толстовки', 'Объёмные, уютные, расписанные вручную — такие вещи не греют, они говорят.', '/images/main_category/sweatshirt.png', 'hoodies'],
-    ['Аксессуары', 'Шопперы, носки, кепки и не только. Раскрась своё настроение до кончиков шнурков.', '/images/main_category/accessories.png', 'accessories'],
-    ['Кастом под заказ', 'Мы создадим вещь по твоей идее. Просто опиши — и получи уникальный результат.', '/images/main_category/custom.png', 'custom'],
-    ['Штаны', '', '/images/main_category/trousers.png', 'trousers'],
-    ['Наборы', '', '', 'sets']
+    ['Футболки', 'Каждая — как дневник настроения. Тай-дай, роспись, детали — ты точно найдёшь свою.', '/images/main_category/tshirt.png', 'tshirts', '/catalog?category=tshirts'],
+    ['Лонгсливы', 'Каждая — как дневник настроения. Тай-дай, роспись, детали — ты точно найдёшь свою.', '/images/main_category/tshirt.png', 'long_sleeves', '/catalog?category=long_sleeves'],
+    ['Толстовки', 'Объёмные, уютные, расписанные вручную — такие вещи не греют, они говорят.', '/images/main_category/sweatshirt.png', 'hoodies', '/catalog?category=hoodies'],
+    ['Аксессуары', 'Шопперы, носки, кепки и не только. Раскрась своё настроение до кончиков шнурков.', '/images/main_category/accessories.png', 'accessories', '/catalog?category=accessories'],
+    ['Кастом под заказ', 'Мы создадим вещь по твоей идее. Просто опиши — и получи уникальный результат.', '/images/main_category/custom.png', 'custom', '/catalog?category=custom'],
+    ['Штаны', '', '/images/main_category/trousers.png', 'trousers', '/catalog?category=trousers'],
+    ['Наборы', '', '', 'sets', '/catalog?category=sets']
 ];
 
 $additionalCategories = [
@@ -225,9 +207,10 @@ foreach ($mainCategories as $data) {
     $description = $data[1] ? "'" . $conn->real_escape_string($data[1]) . "'" : "NULL";
     $image = $data[2] ? "'" . $conn->real_escape_string($data[2]) . "'" : "NULL";
     $anchor = $data[3] ? "'" . $conn->real_escape_string($data[3]) . "'" : "NULL";
+    $link = $data[4] ? "'" . $conn->real_escape_string($data[4]) . "'" : "NULL";
 
-    $sql = "INSERT INTO main_categories (name, description, image, anchor) 
-            VALUES ('$name', $description, $image, $anchor)";
+    $sql = "INSERT INTO main_categories (name, description, image, anchor, link) 
+            VALUES ('$name', $description, $image, $anchor, $link)";
 
     if (!$conn->query($sql)) {
         echo "Ошибка вставки в main_categories: " . $conn->error . "\n";
