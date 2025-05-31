@@ -104,7 +104,7 @@ $sql = "CREATE TABLE IF NOT EXISTS guest_cart (
 )";
 if ($conn->query($sql) === TRUE) echo "Таблица BasketProducts создана успешно.\n"; else die("Ошибка создания таблицы BasketProducts: " . $conn->error);
 
-## Создание таблицы Корзины
+## Feedback
 $sql = "CREATE TABLE IF NOT EXISTS feedback (
     id INT AUTO_INCREMENT PRIMARY KEY,
     `name` VARCHAR(255),
