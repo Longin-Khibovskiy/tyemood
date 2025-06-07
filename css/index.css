@@ -1897,6 +1897,20 @@ section.faq {
     .footer_right_container {
         gap: 20px;
     }
+
+    .portfolio_row {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 40px;
+        justify-items: center;
+    }
+
+    .portfolio_row_right {
+        width: fit-content;
+    }
+
+    .catalog_grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (max-width: 1200px) {
@@ -1980,8 +1994,14 @@ section.faq {
     }
 }
 
+@media (max-width: 1100px) {
+    .catalog_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 900px) {
-    .title_container, .about_container, .bestsellers_container, .services_container, .ideas_container, .categories_container, .portfolio_container, .footer_container {
+    .title_container, .about_container, .bestsellers_container, .services_container, .ideas_container, .categories_container, .portfolio_container, .footer_container, .portfolio_cont, .catalog_container, .product_container, section.faq, .faq_title {
         padding-left: 60px;
         padding-right: 60px;
     }
@@ -1990,7 +2010,7 @@ section.faq {
         padding-left: 60px;
     }
 
-    .title_container, .portfolio_container, .ideas_container {
+    .title_container, .portfolio_container, .ideas_container, .portfolio_cont, .catalog_container, .product_container, section.faq {
         padding-top: 100px;
         padding-bottom: 120px;
     }
@@ -2032,6 +2052,14 @@ section.faq {
     .categories_grid {
         column-gap: 20px;
         row-gap: 24px;
+    }
+
+    .faq {
+        margin: 60px 0;
+    }
+
+    .product_like_you {
+        gap: 0;
     }
 }
 
@@ -2115,6 +2143,14 @@ section.faq {
     footer .regular_04, footer .navigation_semibold {
         font-size: 12px;
     }
+
+    .catalog_product_like {
+        margin: 0 0 300px 140px;
+    }
+
+    .catalog_button_container button {
+        padding: 12px 80px;
+    }
 }
 
 @media (max-width: 700px) {
@@ -2122,7 +2158,7 @@ section.faq {
         padding: 0 40px 0 30px;
     }
 
-    .title_container, .about_container, .bestsellers_container, .services_container, .ideas_container, .categories_container, .portfolio_container, .footer_container {
+    .title_container, .about_container, .bestsellers_container, .services_container, .ideas_container, .categories_container, .portfolio_container, .footer_container, .portfolio_cont, .catalog_container, .product_container, section.faq, .faq_title {
         padding-left: 40px;
         padding-right: 40px;
     }
@@ -2131,7 +2167,7 @@ section.faq {
         padding-left: 40px;
     }
 
-    .title_container, .portfolio_container, .ideas_container {
+    .title_container, .portfolio_container, .ideas_container, .portfolio_cont, .catalog_container, .product_container, section.faq {
         padding-top: 80px;
         padding-bottom: 90px;
     }
@@ -2154,6 +2190,20 @@ section.faq {
 
     .portfolio_main_container {
         margin-top: 40px;
+    }
+
+    .portfolio_main_img {
+        width: 300px;
+        border-radius: 20px;
+    }
+
+    .portfolio_row_right img {
+        width: 200px;
+        border-radius: 20px;
+    }
+
+    .portfolio_row, .portfolio_row_right {
+        gap: 20px;
     }
 }
 
@@ -2210,6 +2260,25 @@ section.faq {
     .footer_right_catalog_container, .footer_right_address_container, .footer_right_contacts_container, .footer_right_social_container {
         width: 40%;
     }
+
+    .faq {
+        grid-template-columns: 1fr;
+    }
+
+    .faq img {
+        display: none;
+    }
+
+    .faq-answer p {
+        font-size: 10px;
+        line-height: 200%;
+    }
+
+    section.faq {
+        padding-top: 0 !important;
+        margin-top: 0;
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 540px) {
@@ -2248,6 +2317,34 @@ section.faq {
     .category_container {
         min-height: 150px;
     }
+
+    .catalog_grid {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 20px;
+        margin: 32px 0 32px 0;
+    }
+
+    .catalog_product_like {
+        margin: 0 0 300px 180px;
+    }
+
+    .product_grid {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 24px;
+    }
+
+    .product_image {
+        width: 80%;
+        justify-self: center;
+    }
+
+    .faq {
+        margin: 40px 0;
+    }
+
+    .faq_title {
+        gap: 0;
+    }
 }
 
 @media (max-width: 506px) {
@@ -2257,6 +2354,11 @@ section.faq {
 
     .header_consultation_container {
         display: none;
+    }
+
+    .portfolio_row_right img {
+        width: 140px;
+        border-radius: 20px;
     }
 }
 
@@ -2293,7 +2395,7 @@ section.faq {
         font-size: 6px;
     }
 
-    .title_container, .about_container, .bestsellers_container, .services_container, .ideas_container, .categories_container, .portfolio_container, .footer_container {
+    .title_container, .about_container, .bestsellers_container, .services_container, .ideas_container, .categories_container, .portfolio_container, .footer_container, .portfolio_cont, .catalog_container, .product_container, section.faq, .faq_title {
         padding-left: 20px;
         padding-right: 20px;
     }
@@ -2303,7 +2405,7 @@ section.faq {
         padding-right: 20px;
     }
 
-    .title_container, .portfolio_container, .ideas_container, .contacts_container {
+    .title_container, .portfolio_container, .ideas_container, .contacts_container, .portfolio_cont, .catalog_container, .product_container, section.faq {
         padding-top: 40px;
         padding-bottom: 70px;
     }
@@ -2335,5 +2437,10 @@ section.faq {
     .portfolio_right_img_container svg {
         width: 60px;
         height: 60px;
+    }
+
+    .product_like {
+        padding: 6px 10px;
+        border-radius: 16px;
     }
 }
