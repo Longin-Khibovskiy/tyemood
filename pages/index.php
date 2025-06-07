@@ -45,7 +45,7 @@ if (isset($_POST['submit_feedback'])) {
         </div>
         <div class="title_right_container">
             <img src="/images/home/text_circle.png" alt="" class="text_circle">
-            <img src="/images/home/rotate_img.png" alt="" width="300px">
+            <img src="/images/home/rotate_img.png" alt="" width="300px" class="title_right_img">
             <p class="regular_03">Толстовка «Революция цвета»</p>
             <p class="price_semibold">3 500 ₽</p>
         </div>
