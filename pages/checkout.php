@@ -137,6 +137,7 @@ $summ = 0;
                     <p class="semibold_01">Сумма</p>
                     <p class="price_semibold"><?= $summ ?> ₽</p>
                 </div>
+                <hr class="hr_checkout_mob">
             </div>
         </div>
     </div>
