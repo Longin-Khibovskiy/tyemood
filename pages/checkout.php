@@ -106,28 +106,29 @@ $summ = 0;
                 <?php foreach ($products_in_cart as $product):
                     $summ += $product['price'] * $product['quantity'] ?>
                     <div class="checkout_product_container" data-product-id="<?= $product['id'] ?>">
-                        <img src="<?=$product['image']?>" alt="">
+                        <img src="<?= $product['image'] ?>" alt="">
                         <div class="checkout_product_description">
-                            <p class="bold_02"><?=$product['name']?></p>
+                            <p class="bold_02"><?= $product['name'] ?></p>
                             <div class="product_characteristics_main">
                                 <p class="semibold_03">Тип окрашивания:</p>
-                                <p class="regular_03"><?=$product['type']?></p>
+                                <p class="regular_03"><?= $product['type'] ?></p>
                             </div>
                             <div class="product_characteristics_main">
                                 <p class="semibold_03">Состав:</p>
-                                <p class="regular_03"><?=$product['composition']?></p>
+                                <p class="regular_03"><?= $product['composition'] ?></p>
                             </div>
                             <div class="product_characteristics_main">
                                 <p class="semibold_03">Размер:</p>
-                                <p class="regular_03"><?=$product['size']?></p>
+                                <p class="regular_03"><?= $product['size'] ?></p>
                             </div>
                             <div class="product_characteristics_main">
                                 <p class="semibold_03">Количество:</p>
-                                <p class="regular_03"><?=$product['quantity']?></p>
+                                <p class="regular_03"><?= $product['quantity'] ?></p>
                             </div>
                             <div class="checkout_product_price_container">
-                                <p class="price_semibold"><?=$product['price'] * $product['quantity']?> ₽</p>
-                                <p class="regular_04 checkout_delete_product" data-product-id="<?= $product['id'] ?>" data-size="<?= $product['size'] ?>">Удалить товар</p>
+                                <p class="price_semibold"><?= $product['price'] * $product['quantity'] ?> ₽</p>
+                                <p class="regular_04 checkout_delete_product" data-product-id="<?= $product['id'] ?>"
+                                   data-size="<?= $product['size'] ?>">Удалить товар</p>
                             </div>
                         </div>
                     </div>
