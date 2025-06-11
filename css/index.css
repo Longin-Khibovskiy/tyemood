@@ -690,7 +690,10 @@ header {
 }
 
 .portfolio_video {
-    width: 60%;
+    width: 100%;
+    object-fit: cover;
+    height: 532px;
+    border-radius: 40px;
 }
 
 .portfolio_right_container {

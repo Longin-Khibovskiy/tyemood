@@ -205,7 +205,7 @@ if (isset($_POST['submit_feedback'])) {
         <h2>Портфолио — как журнал</h2>
         <h2>настроений в красках</h2>
         <div class="portfolio_main_container">
-            <img src="/images/portfolio_video.png" alt="" class="portfolio_video">
+            <video src="/images/portfolio_video.mp4" autoplay loop muted class="portfolio_video"></video>
             <div class="portfolio_right_container">
                 <p class="medium_03">Загляни внутрь процесса, вдохновись формами и найди тот самый вайб, который
                     рождается из красок, ткани и интуиции.</p>
